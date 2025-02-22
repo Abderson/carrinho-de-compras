@@ -1,0 +1,279 @@
+/* Resetando margens, preenchimento e definindo box-sizing como border-box para todos os elementos */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Definindo variáveis CSS para cores */
+:root {
+  --light-blue: #1875E8;
+  --void: #01080E;
+  --white: #FFF;
+}
+
+/* Estilização do corpo */
+body {
+  min-height: 100vh; /* Altura mínima de 100vh */
+  height: auto; /* Altura automática */
+  background: linear-gradient(to bottom,
+      var(--void) 10%, /* Gradiente do fundo */
+      var(--white) 10%,
+      var(--white) 90%,
+      var(--void) 90%);
+  padding: clamp(2rem, 5vh, 7vh) clamp(1rem, 5vw, 8vw); /* Preenchimento com tamanho variável */
+  font-family: 'Inter', sans-serif; /* Fonte usada */
+  font-size: clamp(14px, 1vw, 16px); /* Tamanho da fonte variável */
+}
+
+/* Estilização dos botões */
+button {
+  background: inherit; /* Herdando o fundo */
+  color: inherit; /* Herdando a cor */
+  border: 0; /* Sem borda */
+  cursor: pointer; /* Cursor em forma de mão */
+}
+
+/* Estilização dos selects */
+select {
+  appearance: none; /* Removendo estilo padrão */
+}
+
+/* Estilização dos inputs do tipo número */
+input[type="number"] {
+  appearance: textfield; /* Removendo botões de incremento/decremento */
+  -webkit-appearance: none; /* Compatibilidade com Webkit */
+  margin: 0; /* Sem margem */
+}
+
+/* Texto médio azul */
+.texto-medio-azul {
+  color: var(--light-blue); /* Cor azul clara */
+  font-size: clamp(1.25rem, 3vw, 1.5rem); /* Tamanho de fonte variável */
+  font-weight: 600; /* Peso da fonte */
+  line-height: 110%; /* Altura da linha */
+}
+
+/* Estilização do conteúdo principal */
+.conteudo-principal {
+  filter: drop-shadow(0px 0px 70px rgba(2, 189, 255, 0.40)); /* Sombra do conteúdo */
+  min-height: 100%; /* Altura mínima */
+  padding: clamp(1rem, 5vw, 6.5rem); /* Preenchimento variável */
+  display: grid; /* Exibindo como grid */
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 24rem), 1fr)); /* Layout do grid */
+  gap: clamp(2rem, 5vw, 5rem); /* Espaço entre os itens */
+  background: white url('./assets/oculos.png') no-repeat bottom left; /* Imagem de fundo */
+  background-size: auto 40%; /* Tamanho da imagem */
+  position: relative; /* Posição relativa */
+  background-position: left bottom -40px; /* Posição da imagem */
+}
+
+/* Estilização do grafismo azul */
+.grafismo-azul {
+  position: absolute; /* Posição absoluta */
+  width: min(100%, 31.9375rem); /* Largura mínima */
+  height: 2.0625rem; /* Altura fixa */
+  background-image: url('./assets/grafismo-azul.svg'); /* Imagem de fundo */
+  top: -1rem; /* Posição superior */
+}
+
+/* Estilização do título */
+.titulo {
+  font-family: 'Chakra Petch', sans-serif; /* Fonte do título */
+  font-size: clamp(2rem, 8vw, 5rem); /* Tamanho de fonte variável */
+  font-weight: 700; /* Peso da fonte */
+  line-height: 1.1; /* Altura da linha */
+  margin-bottom: clamp(1.5rem, 4vw, 2.5rem); /* Margem inferior variável */
+}
+
+/* Texto azul */
+.texto-azul {
+  color: var(--light-blue); /* Cor azul clara */
+}
+
+/* Estilização do formulário */
+.formulario {
+  display: flex; /* Exibindo como flex */
+  flex-direction: column; /* Direção da flexbox */
+  align-items: flex-start; /* Alinhamento dos itens */
+  gap: 1.5rem; /* Espaço entre os itens */
+  width: 100%; /* Largura total */
+  max-width: 24.75rem; /* Largura máxima */
+  margin: 0 auto; /* Centralizando */
+}
+
+/* Estilização do campo de grupo do formulário */
+.formulario .campo-grupo {
+  display: flex; /* Exibindo como flex */
+  flex-direction: column; /* Direção da flexbox */
+  align-items: flex-start; /* Alinhamento dos itens */
+  gap: 1rem; /* Espaço entre os itens */
+  width: 100%; /* Largura total */
+}
+
+/* Estilização do input de produto */
+.produto-input {
+  width: 100%; /* Largura total */
+  height: 3.5rem; /* Altura fixa */
+  padding: 1rem; /* Preenchimento */
+  border-radius: 0.5rem; /* Bordas arredondadas */
+  border: 1px solid var(--light-blue); /* Borda azul clara */
+  color: var(--void); /* Cor do texto */
+  font-size: clamp(1rem, 2vw, 1.3125rem); /* Tamanho de fonte variável */
+  font-style: italic; /* Texto em itálico */
+  background: url('./assets/arrow-down.svg') no-repeat right 1rem top 50%; /* Imagem de fundo */
+}
+
+/* Estilização do dropdown */
+.dropdown {
+  width: 3.375rem; /* Largura fixa */
+  height: 3.5rem; /* Altura fixa */
+  padding: 1rem; /* Preenchimento */
+  border-radius: 0 0.5rem 0.5rem 0; /* Bordas arredondadas */
+  border: 1px solid var(--light-blue); /* Borda azul clara */
+}
+
+/* Estilização da parte inferior do formulário */
+.formulario > .parte-inferior {
+  display: flex; /* Exibindo como flex */
+  flex-wrap: wrap; /* Quebra de linha dos itens */
+  align-items: flex-end; /* Alinhamento dos itens */
+  gap: clamp(1rem, 3vw, 2rem); /* Espaço entre os itens */
+  width: 100%; /* Largura total */
+}
+
+/* Estilização do input de quantidade */
+.quantidade-input {
+  height: 3.5rem; /* Altura fixa */
+  padding: 1rem; /* Preenchimento */
+  width: clamp(4rem, 10vw, 4.5rem); /* Largura variável */
+  border-radius: 0.5rem; /* Bordas arredondadas */
+  border: 1px solid var(--light-blue); /* Borda azul clara */
+  font-size: clamp(1rem, 2vw, 1.3125rem); /* Tamanho de fonte variável */
+}
+
+/* Estilização do wrapper de botões */
+.botoes-wrapper {
+  display: flex; /* Exibindo como flex */
+  flex-wrap: wrap; /* Quebra de linha dos itens */
+  gap: 1rem; /* Espaço entre os itens */
+  flex: 1; /* Flexibilidade */
+}
+
+/* Estilização do botão de formulário */
+.botao-form {
+  display: flex; /* Exibindo como flex */
+  justify-content: center; /* Centralizando horizontalmente */
+  align-items: center; /* Centralizando verticalmente */
+  min-height: 3.25rem; /* Altura mínima */
+  padding: 1rem 1.5rem; /* Preenchimento */
+  border-radius: 1rem; /* Bordas arredondadas */
+  font-size: clamp(1.25rem, 3vw, 1.5rem); /* Tamanho de fonte variável */
+  font-weight: 700; /* Peso da fonte */
+  flex: 1; /* Flexibilidade */
+  min-width: max(10rem, 45%); /* Largura mínima */
+}
+
+/* Estilização do botão de adicionar */
+.botao-adicionar {
+  background: var(--light-blue); /* Fundo azul claro */
+  box-shadow: 0px 0px 20px 0px rgba(24, 117, 232, 0.50); /* Sombra do botão */
+  color: var(--white); /* Cor do texto */
+}
+
+/* Estilização do botão de limpar */
+.botao-limpar {
+  background: var(--void); /* Fundo escuro */
+  box-shadow: 0px 0px 20px 0px rgba(1, 8, 14, 0.50); /* Sombra do botão */
+  color: var(--white); /* Cor do texto */
+}
+
+/* Estilização do carrinho */
+.carrinho {
+  display: flex; /* Exibindo como flex */
+  width: 100%; /* Largura total */
+  max-width: 24rem; /* Largura máxima */
+  flex-direction: column; /* Direção da flexbox */
+  align-items: flex-start; /* Alinhamento dos itens */
+  gap: 2rem; /* Espaço entre os itens */
+  margin: 0 auto; /* Centralizando */
+}
+
+/* Estilização do wrapper do título */
+.titulo-wrapper {
+  display: flex; /* Exibindo como flex */
+  align-items: center; /* Centralizando verticalmente */
+  gap: 1rem; /* Espaço entre os itens */
+  width: 100%; /* Largura total */
+}
+
+/* Estilização do título do carrinho */
+.carrinho__titulo {
+  color: var(--light-blue); /* Cor azul clara */
+  font-size: clamp(1.25rem, 3vw, 1.5rem); /* Tamanho de fonte variável */
+  font-weight: 600; /* Peso da fonte */
+  line-height: 110%; /* Altura da linha */
+}
+
+/* Estilização dos produtos do carrinho */
+.carrinho__produtos {
+  display: flex; /* Exibindo como flex */
+  flex-direction: column; /* Direção da flexbox */
+  gap: 1rem; /* Espaço entre os itens */
+  width: 100%; /* Largura total */
+}
+
+/* Estilização do produto no carrinho */
+.carrinho__produtos__produto {
+  font-size: clamp(1rem, 2vw, 1.3125rem); /* Tamanho de fonte variável */
+  font-style: italic; /* Texto em itálico */
+  line-height: 110%; /* Altura da linha */
+}
+
+/* Estilização da divisória */
+.divisoria {
+  width: 100%; /* Largura total */
+  height: 1px; /* Altura fixa */
+  background: #000; /* Fundo preto */
+}
+
+/* Estilização do total do carrinho */
+.carrinho__total {
+  font-size: clamp(1.75rem, 4vw, 2.25rem); /* Tamanho de fonte variável */
+  font-weight: 700; /* Peso da fonte */
+  line-height: 110%; /* Altura da linha */
+}
+
+/* Estilização do adicionar produto */
+.adicionar-produto {
+  padding-bottom: clamp(100px, 20vh, 180px); /* Preenchimento inferior variável */
+}
+
+/* Estilização para telas menores que 1024px */
+@media (max-width: 1024px) {
+  .conteudo-principal {
+    text-align: center; /* Alinhamento centralizado */
+    background-position: center bottom; /* Posição do fundo */
+  }
+  
+  .formulario,
+  .carrinho {
+    align-items: center; /* Centralização dos itens */
+  }
+}
+
+/* Estilização para telas menores que 480px */
+@media (max-width: 480px) {
+  .subtitulo {
+    font-size: clamp(1.25rem, 5vw, 1.75rem); /* Tamanho de fonte variável */
+  }
+  
+  .botoes-wrapper {
+    flex-direction: column; /* Direção da flexbox */
+  }
+  
+  .botao-form {
+    width: 100%; /* Largura total */
+    min-width: unset; /* Sem largura mínima */
+  }
+}
